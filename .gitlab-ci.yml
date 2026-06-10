@@ -1,0 +1,34 @@
+stages:
+  - deploy
+
+deploy_on_tag:
+  stage: deploy
+  tags:
+    - shell
+  only:
+    - tags
+  script:
+    - echo "Desplegando la versión $CI_COMMIT_TAG"
+    # 1. Crear la carpeta de la versión
+    - sudo mkdir -p /var/www/laravel-app/$CI_COMMIT_TAG
+
+    # 2. Copiar el código que ya ha bajado el Runner a la carpeta de destino
+    - sudo cp -r . /var/www/laravel-app/$CI_COMMIT_TAG
+
+    # 3. Ir a la carpeta y configurar
+    - cd /var/www/laravel-app/$CI_COMMIT_TAG
+    - sudo cp /var/www/laravel-app/.env.production .env || echo "Asegúrate de que .env.production existe en /var/www/laravel-app/"
+
+    # 4. Instalar y permisos (Usando sudo para evitar líos por ahora)
+    - sudo composer install --no-dev --optimize-autoloader --no-interaction
+    - sudo php artisan config:cache
+    - sudo chown -R www-data:www-data .
+    - sudo chmod -R 775 storage bootstrap/cache
+
+    # 5. Nginx: Cambiar la ruta del root
+    # Esta línea busca la línea de 'root' en tu config de Nginx y la actualiza
+    - sudo sed -i "s|root .*/public;|root /var/www/laravel-app/$CI_COMMIT_TAG/public;|g" /etc/nginx/sites-available/laravel-app
+
+    # 6. Recargar Nginx
+    - sudo nginx -t && sudo systemctl reload nginx
+    - echo "¡Listo! Versión $CI_COMMIT_TAG desplegada."

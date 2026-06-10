@@ -1,0 +1,389 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --diagonal-gradient: linear-gradient(138deg, rgba(124, 58, 237, 1) 29%, rgba(236, 72, 153, 1) 74%);
+    --color-fondo: #0a0e27;
+    --color-purpura: #7c3aed;
+    --color-rosa: #ec4899;
+    --color-amarillo: #f59e0b;
+    --color-verde: #10b981;
+    --color-gris: #94a3b8;
+    --color-tarjetas: #0f172a;
+    --color-rojo: #ef4444;
+}
+
+.bg-dark {
+    background-color: var(--color-fondo) !important;
+}
+
+.bg-primary {
+    background-color: var(--color-purpura) !important;
+}
+
+.text-primary {
+    color: var(--color-purpura) !important;
+}
+
+.border-primary {
+    border-color: var(--color-purpura) !important;
+}
+
+.btn-primary {
+    background-color: var(--color-purpura) !important;
+    border-color: var(--color-purpura) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--color-rosa) !important;
+    border-color: var(--color-rosa) !important;
+}
+
+/* Rosa para hover states */
+.text-danger {
+    color: var(--color-rosa) !important;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--color-rosa) !important;
+    border-color: var(--color-rosa) !important;
+}
+
+/* Amarillo para ratings */
+.text-warning {
+    color: var(--color-amarillo) !important;
+}
+
+.bg-warning {
+    background-color: var(--color-amarillo) !important;
+    color: #000 !important;
+}
+
+/* Verde para precios/éxito */
+.text-success {
+    color: var(--color-verde) !important;
+}
+
+.bg-success {
+    background-color: var(--color-verde) !important;
+}
+
+/* Gris para texto secundario */
+.text-muted,
+.text-secondary {
+    color: var(--color-gris) !important;
+}
+
+.bg-secondary {
+    background-color: var(--color-gris) !important;
+}
+
+/* Fondo para tarjetas */
+.card.bg-dark {
+    background-color: var(--color-tarjetas) !important;
+}
+
+/* Rojo para errores */
+.text-danger-soft {
+    color: var(--color-rojo) !important;
+}
+
+.bg-danger {
+    background-color: var(--color-rojo) !important;
+}
+
+/* Navegación específica */
+.navbar-dark.bg-dark {
+    background-color: var(--color-tarjetas) !important;
+}
+
+.border-primary {
+    border-color: var(--color-purpura) !important;
+}
+
+/* Estados activos */
+.list-group-item.active,
+.nav-link.active {
+    background-color: var(--color-purpura) !important;
+    border-color: var(--color-purpura) !important;
+}
+
+/* Badges personalizados */
+.badge.bg-info {
+    background-color: rgba(124, 58, 237, 0.2) !important;
+    color: var(--color-purpura) !important;
+}
+
+.badge.bg-purple {
+    background-color: var(--color-purpura) !important;
+    color: white !important;
+}
+
+/* Hover para tarjetas */
+.product-card:hover {
+    border-color: var(--color-purpura) !important;
+    box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3) !important;
+}
+
+.bg-tarjetas {
+    background-color: #0f172a !important;
+}
+
+.hover-rosa:hover {
+    background-color: rgba(236, 72, 153, 0.1) !important;
+    color: #ec4899 !important;
+}
+
+.hover-rojo:hover {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    color: #ef4444 !important;
+}
+
+.dropdown-menu.bg-dark {
+    background-color: #0f172a !important;
+}
+
+.dropdown-item.text-white {
+    color: #ffffff !important;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(124, 58, 237, 0.1) !important;
+}
+
+#title-catalog {
+
+    color: #7c3aed;
+    background-image: linear-gradient(270deg, #7c3aed 39%, #ec4899 78%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    justify-content: center;
+}
+
+.body-aplicacion {
+    background-color: #0a0e27 !important;
+}
+
+.body-aplicacion #aplicacion {
+    width: 90em;
+    border: solid 1px #7c3aed;
+    box-shadow: 0 0 6px 0px #7c3aed;
+    background-color: #1a1236;
+}
+
+.buttons-categories button {
+    border: solid 1px #7c3aed;
+    background-color: #2f1b5a;
+}
+
+.buttons-categories button:hover {
+    background: var(--diagonal-gradient);
+}
+
+.buttons-categories button.active {
+    background: var(--diagonal-gradient);
+
+}
+
+.card.product {
+    background-color: #0d021d;
+    height: 320px;
+}
+
+.card.product .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.card.product:hover {
+    box-shadow: 5px 5px 25px 0px #7c3aed;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 270ms ease-in-out;
+
+}
+
+.card-text.category-text {
+    font-size: 12px;
+}
+
+.material-symbols-outlined {
+
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.text-price {
+    color: #10b981;
+}
+
+.text-price-rebajado {
+    color: #15694d;
+    text-decoration: line-through;
+}
+
+.fadein {
+    opacity: 0;
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.fadein.show {
+    opacity: 1;
+}
+
+#mensaje_error {
+    position: sticky;
+    bottom: 10px;
+    left: 10px;
+    width: 300px;
+}
+
+
+.container #tabla-especificaciones {
+    background-color: #13162f;
+    width: 500px;
+    height: 200px;
+}
+
+.fila-especificaciones {
+    padding: 10px;
+    border-bottom: 1px solid #442679;
+}
+
+.button-envio {
+    border: solid 1px #7c3aed;
+    background-color: #2f1b5a;
+    width: 150px;
+    height: 130px;
+}
+
+.button-envio:hover {
+    background: var(--diagonal-gradient);
+}
+
+.button-anadir {
+    background: var(--diagonal-gradient);
+    width: 550px;
+}
+
+.button-anadir:hover {
+    border: solid 1px #7c3aed;
+    background: #2f1b5a;
+}
+
+.button-anadir:hover a {
+    color: white;
+}
+
+.container .row .columnas {
+    background-color: #0d021d;
+    justify-content: center;
+    align-items: start;
+}
+
+.card.pedido {
+    background-color: #11162c;
+}
+
+.container.perfil {
+    overflow: auto;
+}
+
+.columnas .container #pedidos {
+    width: 400px;
+}
+
+.columnas #datos-usuario {
+    margin-top: 100px;
+}
+
+#icono-usuario {
+    margin-left: 100px;
+    height: 100px;
+    width: 100px;
+    border: solid 2px #7c3aed;
+    background-color: #11162c;
+}
+
+.button-profile {
+    border: solid 1px #7c3aed;
+    background-color: #2f1b5a;
+    margin-left: 100px;
+}
+
+.button-profile:hover {
+    background: var(--diagonal-gradient);
+}
+
+.tabla-pedidos {
+    width: 920px;
+    overflow: hidden;
+    background-color: #060815;
+    max-height: 0;
+    transition: max-height 0.7s ease-in-out;
+
+}
+
+.tabla-pedidos.mostrarTabla {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.button-mostrar {
+    flex-grow: 2;
+    background-color: #0d021d
+}
+
+.button-mostrar:hover,
+.active-mostrar {
+    background-color: #060815;
+}
+
+.link-producto:hover {
+    color: #7c3aed;
+}
+
+.login {
+    background-color: #0a0e27;
+}
+
+.login-interior {
+    border: solid 1px #7c3aed;
+    background-color: #1a1236;
+}
+
+.button-login {
+    font-family: Figtree;
+    font-size: 0.875rem;
+    font-weight: 500;
+    width: 500px;
+    background: var(--diagonal-gradient);
+}
+
+.button-login:hover {
+    border: solid 1px #7c3aed;
+    background: #1a1236;
+    background-color: #1a1236;
+}
+
+input .input-login {
+    background-color: #060815;
+}
+
+.button-save {
+    background: var(--diagonal-gradient);
+}
+
+.button-save:hover {
+    border: solid 1px #7c3aed;
+    background: #1a1236;
+    background-color: #1a1236;
+}
